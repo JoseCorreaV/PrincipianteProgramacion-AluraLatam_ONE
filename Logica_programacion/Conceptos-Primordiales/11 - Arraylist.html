@@ -1,0 +1,100 @@
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Declarar las etiquetas-->
+<input>
+<button> verificar</button>
+
+<!-- Titulo de la web -->
+<title>ArrayList-while-for</title>
+
+<!-- JavaScript-->
+<script>
+   // .querySelector(input) cumple la función de seleccionar la etiqueta => en este caso es input
+   var Campo_text = document.querySelector("input");
+   // inicar el cursor al carfgar la pagina
+   Campo_text.focus();
+
+
+   // generar numeros aleatorios del 0 al 10
+   function NumAleatorios() {
+      return Math.round(Math.random() * 10);
+   }
+
+   // función que me rertorna un arraylist con n cantidad de elementos
+   function NumElemntos(cantidad) {
+      var secreto = [];
+      var contador = 1;
+
+      while (contador <= cantidad) {
+         var aleatorio = NumAleatorios();
+         var find = false;
+
+         if (aleatorio != 0) {
+            // inicio for
+            for (var cont = 0; cont < secreto.length; cont++) {
+               if (aleatorio == secreto[cont]) {
+                  find = true;
+                  break;
+               }
+            }//fin del for
+
+            //inicio if
+            if (find == false) {
+               //push = agregar o meter los valores a Numsecret
+               secreto.push(aleatorio);
+               contador++;
+            } // fin if
+
+         }
+
+      } // fin while
+
+
+      return secreto;
+   }
+
+   // arraylist
+   var Numsecret = NumElemntos(4);
+   console.log(Numsecret);
+
+
+
+   //contador
+   var n;
+   var finds = false;
+
+   function verificarNum() {
+
+      for (n = 0; n <= Numsecret.length; n++) {
+         if (parseInt(Campo_text.value) == Numsecret[n]) {
+            alert("acertaste");
+            finds = true;
+            break;
+         }
+
+      }
+
+      if (finds == false) {
+         alert("erraste.");
+      }
+
+      // importante el .value para hacer referencia al valor.
+      // limpiar campo
+      Campo_text.value = " ";
+      // dirigir el cursor al campo
+      Campo_text.focus();
+
+   }
+
+
+   // botones
+   var bton = document.querySelector("button");
+   // .onclick para cuando presionemos el boton
+   // los parentesis hacen que se ejecute la función. para evitarlo se debe quitar ().
+   bton.onclick = verificarNum;
+
+
+
+</script>
+<!-- Fin Js-->

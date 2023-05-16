@@ -1,0 +1,43 @@
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Titulo de la web -->
+      <title>IMC-Pide-datos</title>
+      
+<!-- JavaScript-->
+    <script> 
+     
+    // Función salto de linea
+    // la etiqueta <hr> pone una linea
+    function SaltLine(){
+        document.write("<br><br><br><hr><br><br>");
+    }
+
+    // Función imprimir
+    function imprime(parrafo){
+        document.write("<big>"+parrafo+"</big>");
+    }
+
+    function IMC (P,A){
+      return P/ (A*A);
+    }
+
+    imprime ( "Promedio de jose "+IMC(69,1.70));
+
+    //-------------------------------------------------------------
+
+    SaltLine();
+
+    // Pedir campos -pop-up- => prompt
+    nombre = prompt ("Ingresar nombre");
+    peso = prompt (nombre+" Informar peso");
+    altura = prompt (nombre+" Informar altura");
+    
+    Resultado = IMC(peso,altura);
+
+    document.write(nombre+" Imc: "+Resultado)
+
+   </script>
+<!-- Fin Js-->
+
+

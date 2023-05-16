@@ -1,0 +1,75 @@
+<!-- para graficos y demas-->
+<canvas width="600" height="400"></canvas>
+
+<title>Aleatorio-auto</title>
+
+<!----------------------------------------------->
+<script>
+    var pantalla = document.querySelector("canvas");
+    // para dibujar en pantalla
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "white";
+    pincel.fillRect(0, 0, 600, 400);
+    var radio = 10;
+    var aleatorioX;
+    var aleatorioY;
+
+
+
+ function DibujarCirculo(x, y, radio, color) {
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 9);
+        pincel.fill();
+    }
+
+    function limpiePantalla() {
+        pincel.clearRect(0, 0, 600, 400);
+    }
+
+    var x = 0
+
+    function dibujeCirculos(x, y) {
+        DibujarCirculo(x, y, radio + 20, "red");
+        DibujarCirculo(x, y, radio + 10, "white");
+        DibujarCirculo(x, y, radio, "red");
+    }
+
+    function PositionAleatorio(MaxNum) {
+        //redondear .floor cuando queremos redondear un número al máximo entero menor 
+        return Math.floor(Math.random() * MaxNum);
+    }
+
+   
+    function actualizePantalla() {
+        limpiePantalla(); // Limpia muy rapido que no se ve el color azul
+        aleatorioX = PositionAleatorio(600);
+        aleatorioY = PositionAleatorio(400);
+        dibujeCirculos(aleatorioX, aleatorioY);
+        // se mueve a la derecha de 1 en 1
+        x++;
+    }
+
+    setInterval(actualizePantalla,1000);
+
+    
+
+    //evento
+    function eventoDispare(evento) {
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pagey - pantalla.offsetTop;
+
+        if (x < aleatorioX + radio &&
+            x > aleatorioX - radio &&
+            y < aleatorioY + radio &&
+            y > aleatorioY - radio ) {
+
+            alert("acertraste");
+        }
+    }
+
+    pantalla.onclick = eventoDispare;
+
+
+
+</script>

@@ -1,0 +1,41 @@
+<!-- para graficos y demas-->
+<canvas width="600" height="400"></canvas>
+
+<!----------------------------------------------->
+<script>
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+
+    pincel.fillStyle = "blue";
+    pincel.fillRect(0, 0, 600, 400);
+
+ /*    function alerta(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        console.log(evento);
+        alert(x + "," + y);
+    } */
+
+    function dibujeCirculo(evento){
+     /*    evento.pageX => captura en tiempo real
+        las coordenadas X de la pantalla.
+         Sin enbargo se debe restar lo que sobra 
+         de la izquierda y arriba */
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+        // colorea de negro
+        pincel.fillStyle = "black";
+        // inicia la ubicación del pincel
+        pincel.beginPath();
+        // dibuja circulo en la pantalla
+        pincel.arc(x,y,10,0,9);
+        // para poder ver todo
+        pincel.fill();
+        // ver en consola
+        console.log(x + "," + y);
+    }
+
+    pantalla.onclick = dibujeCirculo;
+
+
+</script>

@@ -1,0 +1,39 @@
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Titulo de la web -->
+      <title>while</title>
+      
+<!-- JavaScript-->
+    <script> 
+    
+    // Función salto de linea
+    // la etiqueta <hr> pone una linea
+    function SaltLine(){
+        document.write("<br><br><br><hr><br><br>");
+    }
+
+    // Función imprimir
+    function imprime(parrafo){
+        document.write("<big>"+parrafo+"</big>");
+    }
+
+    
+    //-------------------------------------------------------------
+
+    var MundialesYear = 1984;
+    limite = parseInt(prompt("Ingrese el año limite para calcular"));
+
+    // entra al bucle cuando MundialesYear sea < menor o = igual al limite
+    while(MundialesYear <= limite){
+        SaltLine();
+        imprime("hubo mundial fifa en el año"+MundialesYear);
+        MundialesYear = MundialesYear + 4; //  agregara el 4 cada ves que entre al bucle while
+    }
+    SaltLine();
+    imprime("Fin del mundila "+ MundialesYear );
+
+   </script>
+<!-- Fin Js-->
+
+

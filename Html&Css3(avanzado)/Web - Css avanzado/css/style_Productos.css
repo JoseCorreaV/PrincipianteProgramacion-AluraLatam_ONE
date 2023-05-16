@@ -1,0 +1,327 @@
+/*
+1. ¿Cuál es el comportamiento del elemento cuando agrego espaciamiento interno, el padding? 
+
+El elemento aumenta su tamaño. Cuando declaro que existe un espaciamiento interno, estoy aumentando el contenido.
+
+
+2. ¿Cuál es el comportamiento esperado? de border: 3px solid #000000;
+
+En la estructura de “cajas” del CSS, un borde queda posicionado entre el padding y el margin.
+*/
+
+/* jerarquia css 
+#id = 100
+.class 50
+Etiqueta 1
+
+Etiqueta .class = 1 + 50 = 101 => esta tiene mas peso
+
+Selectores =>  >   +    ~   not
+
+ >  => para acceder a los hijos de determinado elemento. ejemplo => main > p {}
+ + => para acceder al primer hermano de determinado elemento. ejemplo => img + p {}
+ ~ => para acceder a todos los hermanos de determinado elemento. ejemplo => img  ~ p {}
+ not => para acceder a los elementos, excepto algunos. ejemplo => main p:not(#missao) {}
+
+ función calcular => width: calc(100% - 100px); se hace un calculo para el tamaño
+
+ ¿Cómo hacer una sombra interna en un elemento?
+ R/ box-shadow: inset 0 0 5px black;
+
+*/
+
+body {
+    font-family: 'Montserrat', sans-serif
+}
+
+header {
+    background-color: rgb(126, 126, 240);
+    padding: 20px 0;
+}
+
+.cajaNav {
+    position: relative;
+    width: 940px;
+    /* para el acho de la pantalla es mejor auto*/
+    margin: 0 auto;
+}
+
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0;
+}
+
+nav li {
+    /* Inline ocupa el tamaño del contenido */
+    display: inline;
+    /*espacios*/
+    margin: 0 0 0 15px;
+}
+
+nav a {
+    /* Para que este en mayuscula*/
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    font-size: 22px;
+    /* para quitar las lineas por defecto que sales al darle click*/
+    text-decoration: none;
+}
+
+/* para capturar el movimiento del mouse*/
+nav a:hover {
+    color: #c78c19;
+    text-decoration: underline;
+}
+
+.productos {
+    width: 940px;
+    /* para el acho de la pantalla es mejor auto*/
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.productos li {
+    display: inline-block;
+    text-align: center;
+    /* cada lita tendra un espacio del 30%*/
+    width: 30%;
+    vertical-align: top;
+    /* background-color: rgb(235, 121, 121); --> para ver los bordes
+     */
+    /* el 1.5% debe ser el valor complementario de width: 940px(product) + width: 30%(this); + 1.5
+    para completar los 1000px */
+    margin: 0 1.5%;
+    /* el valor de padding se pasa por lo que depende del width: 30%(this)
+    para solucionarlo pondemos un box-szing: border-box */
+    padding: 30px 20px;
+    /* el borde sera el limite de los espacios de la listas */
+    box-sizing: border-box;
+
+    border: 2px solid #000;
+    /*  es lo mismo 
+    border-color: #000;
+    border-width: 2px;
+    border-style: solid; */
+
+    border-radius: 10px 25px 40px 50px;
+}
+
+.productos li:hover {
+    border-color: #c78c19;
+}
+
+/* para capturar el click*/
+.productos li:active {
+    border-color: green;
+}
+
+.productos li:hover h2 {
+    font-size: 33px;
+}
+
+.productos h2 {
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.descript {
+    font-size: 18px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    /*para separar la descript del price*/
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    background: url(../imgs/bg.jpg);
+    padding: 30px;
+
+}
+
+/* unicode-table.com*/
+.copyR {
+    color: white;
+    font-size: 13px;
+    margin: 20px;
+}
+
+
+form {
+    margin: 40px o;
+}
+
+form label,
+form legend {
+    /* para elementos verticales */
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input_text {
+    display: block;
+    /* para espacios externos */
+    margin: 0 0 20px;
+    /* padding sirve para cambiar el espaciado interno, entre el contenido y el borde. */
+    padding: 10px 25px;
+    width: 50%;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+
+.enviar {
+    width: 40%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(12, 15, 17);
+    border: none;
+    background: #c78c19;
+    border-radius: 5px;
+    /* */
+    transition: 1s all;
+    /* Cursor: name => cambiar el icono del cursor*/
+    cursor: pointer;
+}
+
+.enviar:hover {
+    background: #f5a300;
+    /*cambiar la escala*/
+    transform: scale(1.1);
+}
+
+table {
+    margin: 40px 40px;
+}
+
+thead {
+    background: #000;
+    color: azure;
+    font-weight: bold;
+}
+
+td,
+th {
+    border: 3px solid #0010f5;
+    padding: 8px 30px;
+}
+
+/*                                                                    CSS para home                              */
+
+.prinP {
+    padding: 3em 0;
+    background: white;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.text-P {
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left;
+}
+
+.text-P:before{
+    content: "[";
+}
+.text-P:after{
+    content: "]";
+}
+
+.prinP p {
+    margin: 0 0 1em;
+    font-size: 1em;
+}
+
+.prinP strong {
+    font-weight: bold;
+}
+
+.prinP em {
+    font-style: italic;
+}
+
+.utencilio {
+    width: 120px;
+    /* para que la imagen quede al lado del texto */
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.mapa {
+    padding: 3em 0;
+    background: linear-gradient(#fefefe, #888888);
+}
+
+.mapa p {
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.mapa-cont {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.diferencia {
+    padding: 3em 0;
+    background: #888888;
+}
+
+.cont-dif {
+    width: 640px;
+    margin: 0 auto;
+}
+
+.Ul-dif {
+    width: 40%;
+    display: inline-block;
+    /* para subir la lista*/
+    vertical-align: top;
+}
+
+.items {
+    /* 1 + el 50% de la fuente en los espacios */
+    line-height: 1.5;
+}
+
+/* Seudo-clases =>  para seleccionar el primer elemento => first-child
+para el 4 elemento => nth-child(4)
+*/
+.items:first-child {
+    font-weight: bold;
+}
+
+/* colocar un contenido antes del item*/
+.items:before {
+    content: "★"
+}
+
+.imagen-diferenciales {
+    width: 60%;
+}
+.imagen-diferenciales:hover {
+    box-shadow: 5px 5px 10px #000;
+}
+
+/*                                           Responsive   =>    con condiciones                          */
+
+
+@media screen and (max-widht:480px){
+    /* corregir las etiquetas que pasan de los widht 480px*/
+    h1{text-align: center;} nav{position: static;}
+    .caja, .prinP, .mapa-cont, .cont-dif{
+        width: auto;
+    }
+    .Ul-dif, .imagen-diferenciales{width: 100%;}
+}

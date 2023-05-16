@@ -1,0 +1,42 @@
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Declarar las etiquetas-->
+<input>
+<button> verificar</button>
+
+<!-- Titulo de la web -->
+      <title>Bton_input</title>
+      
+<!-- JavaScript-->
+    <script>
+    var numSistema = Math.round(Math.random() * 10);
+    // .querySelector(input) cumple la función de seleccionar la etiqueta => en este caso es input
+    var Campo_text = document.querySelector("input"); 
+    // inicar el cursor al carfgar la pagina
+    Campo_text.focus();
+    
+    function verificarNum(){
+    if( parseInt(Campo_text.value) === numSistema){
+        alert("acertaste!!");
+    }else{
+        alert("erraste.");
+    }
+
+      // importante el .value para hacer referencia al valor.
+      // limpiar campo
+      Campo_text.value = " ";
+      // dirigir el cursor al campo
+      Campo_text.focus();
+   
+}
+ // botones
+ var bton = document.querySelector("button");
+ // .onclick para cuando presionemos el boton
+ // los parentesis hacen que se ejecute la función. para evitarlo se debe quitar ().
+ bton.onclick = verificarNum;
+
+
+    
+   </script>
+<!-- Fin Js-->

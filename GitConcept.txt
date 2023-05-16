@@ -1,0 +1,17 @@
+Commit => es la forma de guardar un estado o versión de nuestro código;
+
+Agregar archivos para commitear con git add;
+
+Commitear archivos usando el comando git commit;
+
+Verificar el historial de commits, a través de git log 
+y algunas de sus opciones:
+git log --oneline
+git log -p
+git log --pretty="parámetros de formato"
+
+Hacer que Git no monitoree archivos, a través de .gitignore
+
+------------------- Servidores ------------------------------
+1. agregar una carpeta
+2. en la carpeta hacer => git init --bare

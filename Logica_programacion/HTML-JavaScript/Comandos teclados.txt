@@ -1,0 +1,2 @@
+Control + U => ver el codigo de la pagina en una pestaña
+F11 => abrir herramienta de desarrollador en chrome

@@ -1,0 +1,101 @@
+<!--Define la versión del HTML por defecto es 5-->
+<!DOCTYPE html>
+<html lang="en">
+<!--Etiquetas informativa-->
+
+<head>
+    <!--Admitir caracteres especiales del español-->
+    <meta charset="UTF-8">
+    <!-- Resposive para movile -->
+    <meta name="viewport" content="width-device-width">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style_Productos.css">
+    <!-- para un texto mejor-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<!--Etiquetas para contenido-->
+
+<body>
+
+    <!-------------------------------Cabecera----------------------------------------------------------------------------->
+    <header>
+        <div class="cajaNav">
+            <h1><img src="imgs/logo.png"></h1>
+            <nav>
+                <ul>
+                    <li> <a href="Home.html"> Home </a> </li>
+                    <li> <a href="products.html"> Producto </a> </li>
+                    <li><a href="contacto.html"> Contacto </a> </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!--------------------------------------------------Main-------------------------------------------------------->
+
+    <main>
+        
+        <section class="prinP">
+
+            <h2 class="text-P"> Para qué sirve el Front-end </h2>
+
+            <img class="utencilio" src="imgs/imagen-text.jpg" alt="utencilios de barbero">
+         
+                <p>Sirve <em><strong> para que un usuario pueda entrar a una web cualquiera, ya que es la parte que 
+                este ve y con la que este interactúa al acceder.</strong></em> Debe estar diseñado para ser 
+                fácilmente utilizable y también muy atractivo. De hecho, de su usabilidad y su estética depende 
+                la imagen que se transmita de la firma en cuestión en el plano digital.</p>
+                
+                <p id="mission">Si consigue una buena experiencia de usuario, puede hacer que este se quede más
+                    tiempo e incluso que traiga a otros, algo que da más visibilidad a cualquier negocio y, 
+                    por supuesto, ayuda en la generación</p>.
+              
+        </section>
+
+            <!------------------------------------------- mapa ------------------------------------------------->
+            <section class="mapa">
+                <h3 class="text-P">Ubicación</h3>
+                <p> Estamos localizados en esta dirección </p>
+
+                <div class="mapa-cont">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.258868315701!2d
+                -74.092254!3d4.627122!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a2c9e55921b%3A0x2c70049169
+                fd8049!2sCarulla%20La%20Soledad!5e0!3m2!1ses-419!2sco!4v1683724703219!5m2!1ses-419!2sco" width="100%"
+                    height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+
+            </section>
+            <!-------------------------------------------------- contenido + imagen --------------------------------------------------------------------->
+
+            <section class="diferencia">
+                <h2 class="text-P"> Lenguajes del frontend</h2>
+                <div class="cont-dif">
+                    <ul class="Ul-dif">
+                        <li class="items"> JavaScript </li>
+                        <li class="items"> CSS </li>
+                        <li class="items"> HTML </li>
+                        <li class="items"> VUE </li>
+                        <li class="items"> jQuery </li>
+                        <li class="items"> SASS </li>
+                    <!-- para que aparezca al lado se debe pegar los elementos debido a => inline-block-->
+                    </ul><img src="imgs/diferenciales.jpg" class="imagen-diferenciales">
+                </div>
+            </section>
+
+    </main>
+
+
+    <!---------------------------------------------------Pie de pagina---------------------------------------------------------->
+    <footer>
+        <img src="imgs/logo-blanco.png">
+        <p class="copyR">&copy Copyright Baberia Jose - 2020</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!--Define la versión del HTML por defecto es 5-->
+<!DOCTYPE html>
+<html lang="">
+<!--Etiquetas informativa-->
+
+<head>
+    <!--Admitir caracteres especiales del español-->
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style_Productos.css">
+
+</head>
+<!--Etiquetas para contenido-->
+
+<body>
+    <!-------------------------------Cabecera----------------------------------------------------------------------------->
+    <header>
+        <div class="cajaNav">
+            <!-- alt => mejorar la lectura del codigo-->
+            <h1><img src="imgs/logo.png" alt="Logo barberia"></h1>
+            <nav>
+                <ul>
+                    <li> <a href="Home.html"> Home </a> </li>
+                    <li> <a href="productss.html"> Producto </a> </li>
+                    <li><a href="contacto.html"> Contacto </a> </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <!---------------------------------------------------Contenido con <main>---------------------------------------------------------->
+    <main>
+        <!----------------------------------------------- Campos de texto input ----------------------------------------->
+        <!--Importante poner los tipos de input correspondiente-->
+        <!-- Para que el campo sea requerido => required -->
+        <label for="Name_Apell"> Nombre y apellido</label>
+        <input type="text" id="Name_Apell" class="input_text" required>
+
+        <label for="Email"> Email</label>
+        <input type="email" id="Email" class="input_text" required placeholder="nombreUser@dominio.con">
+
+        <label for="phone"> Telefono</label>
+        <input type="tel" id="Phone" class="input_text" required placeholder="(XXX) XXX XXXXXXX">
+
+        <label for="areatext">mensaje</label>
+        <textarea id="areatext" cols="70" rows="10" class="input_text"></textarea>
+
+
+        <!----------------------------------------------- Radio de selección ----------------------------------------->
+
+        <!-- checked => seleccionar por defecto un input-->
+        <!-- fieldset => remplaza a div solo cuando los datos encapsulados tienen el mismo tipo-->
+        <fieldset>
+            <p> Selecciona la opción de contacto </p>
+            <label for="radio_email">
+                <input type="radio" name="contacto" value="Email" id="radio_email">
+                Email</label>
+
+            <label for="radio_telefono">
+                <input type="radio" name="contacto" value="Telefono" id="radio_telefono">
+                Telefono</label>
+
+            <label for="radio_Wpp">
+                <input type="radio" name="contacto" value="WhatsApp" id="radio_wpp" checked>
+                WhatsApp</label>
+        </fieldset>
+
+        <!----------------------------------------------- Lista de opciones----------------------------------------->
+
+        <fieldset>
+            <legend> Selecciona el horario preferido </legend>
+            <Select>
+                <option> Mañana </option>
+                <option> Tarde </option>
+                <option> Noche </option>
+            </Select>
+        </fieldset>
+
+
+        <!----------------------------------------------- CheckBox ----------------------------------------->
+        <label class="checkbox"> <input type="checkbox" checked> Acepto recibir notificaciones</label>
+
+        <!----------------------------------------------- bton con acción submit ----------------------------------------->
+        <input type="submit" value="Send form" class="enviar">
+
+        <!----------------------------------------------- crear tablas estaticamente ----------------------------------------->
+        <!-- td => columnas
+             tr => filas
+             thead => encabezado de la tabla && th => filas para thead
+             tbody => contenido de las tablas
+             -->
+        <table>
+
+            <thead>
+                <tr>
+                    <th> Week Day</th>
+                    <th> Timetable </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td> Monday</td>
+                    <td> 08h - 20h </td>
+                </tr>
+
+                <tr>
+                    <td> tuesday</td>
+                    <td> 08h - 20h </td>
+                </tr>
+
+                <tr>
+                    <td> wednesday</td>
+                    <td> 08h - 20h </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </main>
+    <!---------------------------------------------------Pie de pagina---------------------------------------------------------->
+    <footer>
+        <img src="imgs/logo-blanco.png" alt="logo pie de pagina">
+        <p class="copyR">&copy Copyright Baberia Jose - 2020</p>
+    </footer>
+
+</body>
+
+</html>

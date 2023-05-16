@@ -1,0 +1,51 @@
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Titulo de la web -->
+      <title>Condicional_if</Calcular-puntos-futbol></title>
+      
+<!-- JavaScript-->
+    <script> 
+     
+    // Función salto de linea
+    // la etiqueta <hr> pone una linea
+    function SaltLine(){
+        document.write("<br><br><br><hr><br><br>");
+    }
+
+    // Función imprimir
+    function imprime(parrafo){
+        document.write("<big>"+parrafo+"</big>");
+    }
+
+    //-------------------------------------------------------------
+
+    SaltLine();
+
+    var victorias = prompt("Cantidad de victorias");
+    var empates = prompt("Cantidad de empates"); // retorna un String
+
+    var NumVicto =  parseInt(victorias);
+    var NumEmpat =  parseInt(empates);
+
+    Ptotal = (NumVicto * 3) + NumEmpat;
+
+    imprime("Total de puntos: "+Ptotal);
+
+// -----------------------------------------------------------------------------------------
+
+  if(Ptotal > 28 ){
+    SaltLine();
+imprime("Mejoro");
+  } if(Ptotal === 10){
+    SaltLine();
+    imprime("Sigue igual");
+  }else{
+    SaltLine();
+imprime("Empeoro");
+  }
+ 
+   </script>
+<!-- Fin Js-->
+
+

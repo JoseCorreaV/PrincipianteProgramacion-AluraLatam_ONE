@@ -1,0 +1,43 @@
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Titulo de la web -->
+      <title>Loteria</title>
+      
+<!-- JavaScript-->
+    <script> 
+    
+    // Función salto de linea
+    // la etiqueta <hr> pone una linea
+    function SaltLine(){
+        document.write("<br><br><br><hr><br><br>");
+    }
+
+    // Función imprimir
+    function imprime(parrafo){
+        document.write("<big>"+parrafo+"</big>");
+    }
+
+    function IMCOperation (P,A){
+      return P/ (A*A);
+    }
+    //-------------------------------------------------------------
+
+    function sorteo (n){
+         return Math.round(Math.random() * n);// Me genera un numero entero  => .round y aleatorio => .random del 0 al 10 con => *10 
+    }
+
+    var NumSistema =  sorteo(10); 
+    var NumJugador = parseInt(prompt(" Ingrese un numero del 1 al 10:"));
+
+if(NumSistema == NumJugador){
+imprime("Felicidades te ganaste la loteria");
+}if(NumSistema > NumJugador || NumSistema < NumJugador){ 
+    imprime(" Erraste El numero de la loteria es: "+NumSistema);
+}
+
+
+   </script>
+<!-- Fin Js-->
+
+

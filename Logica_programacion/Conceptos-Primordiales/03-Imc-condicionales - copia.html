@@ -1,0 +1,57 @@
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Titulo de la web -->
+      <title>IMC_condiciones</title>
+      
+<!-- JavaScript-->
+    <script> 
+    
+    // Función salto de linea
+    // la etiqueta <hr> pone una linea
+    function SaltLine(){
+        document.write("<br><br><br><hr><br><br>");
+    }
+
+    // Función imprimir
+    function imprime(parrafo){
+        document.write("<big>"+parrafo+"</big>");
+    }
+
+    function IMCOperation (P,A){
+      return P/ (A*A);
+    }
+    //-------------------------------------------------------------
+
+var name = prompt(" Ingrese nombre:");
+var peso = parseInt(prompt(" Ingrese su peso"));
+var altura = prompt(" Ingrese su altura");
+
+ var total = IMCOperation(peso,altura);
+
+    function conocer_IMC (){
+        SaltLine();
+        imprime(name+ "  Tu indice de masa corporal es de:  "+total);
+        
+        if(total < 18.5){
+    SaltLine();
+ imprime("Abajo de lo recomendado");
+}if(total >= 18.5 && total < 25 ){
+    SaltLine();
+imprime("Intervalo normal"); // entra solo si cumple con las dos condiciones
+}if(total >= 30){
+    SaltLine();
+    imprime("Obesidad");
+}
+    }
+
+    conocer_IMC();
+
+    //--------------------------------------------------------------------------
+
+
+
+   </script>
+<!-- Fin Js-->
+
+

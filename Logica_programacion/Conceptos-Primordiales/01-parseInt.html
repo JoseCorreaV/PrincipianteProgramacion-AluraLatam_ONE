@@ -1,0 +1,39 @@
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Titulo de la web -->
+      <title>parseInt</Calcular-puntos-futbol></title>
+      
+<!-- JavaScript-->
+    <script> 
+     
+    // Función salto de linea
+    // la etiqueta <hr> pone una linea
+    function SaltLine(){
+        document.write("<br><br><br><hr><br><br>");
+    }
+
+    // Función imprimir
+    function imprime(parrafo){
+        document.write("<big>"+parrafo+"</big>");
+    }
+
+    //-------------------------------------------------------------
+
+    SaltLine();
+
+    var victorias = parseInt(prompt("Cantidad de victorias")); // retorna un integer debido al => parseInt
+    var empates = prompt("Cantidad de empates"); // retorna un String
+    var NumEmpat =  parseInt(empates);
+
+    Ptotal = (victorias * 3) + NumEmpat;
+
+    imprime("Total de puntos: "+Ptotal);
+
+
+
+
+   </script>
+<!-- Fin Js-->
+
+

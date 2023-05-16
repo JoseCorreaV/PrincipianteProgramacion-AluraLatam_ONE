@@ -1,0 +1,39 @@
+<!-- los script se ejecutan de forma lineal de arriba hacia abajo-->
+
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Titulo de la web -->
+      <title>Edades</title>
+      
+<!-- JavaScript-->
+    <script> 
+     
+     var SisterYear = 23;
+     var MyYear = 24;
+     var r  = MyYear - SisterYear;
+
+    // Función salto de linea
+    // la etiqueta <hr> pone una linea
+    function SaltLine(){
+        document.write("<br><br><br><hr><br><br>");
+    }
+
+    // Función imprimir
+    function imprime(parrafo){
+        document.write("<big>"+parrafo+"</big>");
+        SaltLine();
+    }
+
+    var anho = 2025;
+    imprime("hola amigos");
+    // este código calcula las edades de Juan, Pedro y Carlos
+    imprime("Juan tiene: " + (anho-2000) + " años");
+    imprime("Pedro tiene: " + (anho-1995) + " años");
+    anho = 2030
+    imprim("Carlos tiene: " + (anho-2005) + " años");
+
+   </script>
+<!-- Fin Js-->
+
+

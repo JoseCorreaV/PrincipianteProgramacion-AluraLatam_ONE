@@ -1,0 +1,43 @@
+<!-- Utilizar comas y demas-->
+<meta charset="UTF-8">
+
+<!-- Titulo de la web -->
+      <title>Other_While</title>
+      
+<!-- JavaScript-->
+    <script> 
+    
+    // Función salto de linea
+    // la etiqueta <hr> pone una linea
+    function SaltLine(){
+        document.write("<br><br><br><hr><br><br>");
+    }
+
+    // Función imprimir
+    function imprime(parrafo){
+        document.write("<big>"+parrafo+"</big>");
+    }
+
+    
+    //-------------------------------------------------------------
+    var NumeroMiemb = parseInt(prompt("ingrese la cantidad de personas en tu familia"));
+    var contador = 1;
+    var totalEdades = 0;
+    
+
+    // bucle verdadero
+    while(contador <= NumeroMiemb){
+        var edad = parseInt(prompt("ingrese la edad el familiar"));
+        totalEdades = totalEdades + edad;
+        contador ++; // para recorer
+    }
+
+    SaltLine();
+    var MediaEdades = totalEdades / NumeroMiemb;
+    imprime("Media familiar: "+MediaEdades);
+
+
+   </script>
+<!-- Fin Js-->
+
+

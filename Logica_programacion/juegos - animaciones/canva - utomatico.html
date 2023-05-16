@@ -1,0 +1,35 @@
+<!-- para graficos y demas-->
+<canvas width="600" height="400"></canvas>
+
+<title>setInterval</title>
+
+<!----------------------------------------------->
+<script>
+       var pantalla = document.querySelector("canvas");
+        // para dibujar en pantalla
+        var pincel = pantalla.getContext("2d");
+        pincel.fillStyle = "blue";
+        pincel.fillRect(0, 0, 600, 400);
+        
+
+     function DibujarCirculo(x, y, radio) {
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.arc(x, y,radio, 0, 9);
+        pincel.fill();
+    }
+
+    function limpiePantalla(){
+        pincel.clearRect(0,0,600,400);
+    }
+
+    var c = 0
+    function actualizePantalla(){
+         limpiePantalla(); // Limpia muy rapido que no se ve el color azul
+        DibujarCirculo(c,20,10);
+        // se mueve a la derecha de 1 en 1
+        c++;  
+    }
+
+    setInterval(actualizePantalla,500);
+</script>
