@@ -12,6 +12,110 @@ git log --pretty="parámetros de formato"
 
 Hacer que Git no monitoree archivos, a través de .gitignore
 
-------------------- Servidores ------------------------------
+------------------- conceptos 2 ------------------------------
 1. agregar una carpeta
 2. en la carpeta hacer => git init --bare
+
+Crear un repositorio de Git sin una copia de los archivos
+ (con --bare) para usar como servidor
+
+Agregar links a repositorios remotos, con el comando
+=> git remote add
+
+Descargar un repositorio por primera vez clonándolo con el comando
+=> git clone
+
+Enviar nuestros cambios a un repositorio remoto, co 
+=> git push
+
+Actualizar nuestro repositorio con los datos en el repositorio remoto, usando
+=> git pull
+
+
+------------------- conceptos 3 ------------------------------
+
+El merge junta los trabajos y genera un merge commit. 
+El rebase aplica los commits de otra Branch en la Branch actual.
+
+
+Branch (o rama) es una línea de commits separada,y se puede usar para desarrollar 
+funcionalidades independientes
+
+Branches separadas, podemos evitar que el código de una funcionalidad interfiera con otra
+
+Traer el trabajo realizado en una branch a otra branch, como la master, usando el comando 
+=> git merge;
+Git merge genera un nuevo commit, informando que hubo una mezcla entre dos branches
+
+Traer commits de una branch a otra con 
+=> git rebase
+Git rebase no genera un commit de merge, lo que simplifica nuestro log
+
+------------------- conceptos 4 ------------------------------
+
+
+Con el ( => git restore ) deshacemos una modificación que aún no fue agregada al index o stage, o sea, antes de hacer git add. 
+Después de agregar con git add, para deshacer una modificación, necesitamos sacarlo de este estado, con ( => git restore --staged.)
+Ahora, si ya hicimos el commit, el comando( => git revert ) puede salvarnos.
+
+=> git stash  --> Cuando necesitamos pausar el desarrollo de alguna funcionalidad, o corrección, antes de finalizar, y tal vez no sea 
+interesante realizar un commit, pues nuestro código puede no estar funcionando aún. En este caso es interesante 
+guardar el trabajo para poder volver a él después.
+
+=> git checkout --> Actualizar los archivos en working tree para que queden en la versión especificada.
+
+Para deshacer un cambio antes de agregarlo para commit(con git add), podemos usar el comando
+=> git restore <archivos>
+
+Para deshacer un cambio después de agregarlo paracommit, primero debemos ejecutar
+=> git restore --staged <archivos> 
+Luego podemos deshacerlos con =>  git restore <files>
+
+Para revertir los cambios realizados en un commit, el comando
+=> git revert 
+El comando git revert genera un nuevo commit informando que los cambios fueron deshechos
+
+Para guardar un trabajo y reanudarlo más tarde, podemos usar 
+=> git stash
+
+Para ver qué cambios hay en el stash, podemos usar el comando
+=> git stash list
+
+Podemos aplicar un cambio específico al stash.
+=> git stash apply <número>
+
+Elimina un elemento determinado del stash.
+=> git stash drop <número> 
+
+Aplica y elimina el último cambio que se agregó alstash
+=> git stash pop
+
+Sirve para dejar la copia del código de nuestra aplicación en el estado que queremos
+=> checkout
+
+Deja el código en el estado de una branchcon el nombre <branch>
+=> git checkout <branch> 
+
+Deja el código en el estado de commit con el hash <hash>
+=>git checkout <hash> 
+
+
+------------------- conceptos 5 ------------------------------
+
+Ver qué cambios se hicieron en cada archivo, con el comando
+=> git diff
+Escribir solo git diff, vemos los cambios en nuestros archivos que no se agregaron para commit (con git add);
+
+Es posible comparar cambios entre dos ramas con
+=> git diff <branch1> .. <branch2>
+
+Es posible comparar los cambios realizados entre un commit y otro, usando el comando
+=> git diff <commit1> .. <commit2>
+
+Git nos permite guardar “marcos” de nuestra aplicación, por ejemplo, generando versiones, a través de
+=> git tag
+El comando se usa para generar una nueva tag
+=>  git tag -a
+
+Las Releases de GitHub, que son generadas para cada tag de Git que creamos en 
+nuestro repositorio.
